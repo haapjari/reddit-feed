@@ -1,0 +1,8 @@
+.env
+dist
+build
+venv
+main.spec
+.idea
+src/__pycache__
+*pycache*
