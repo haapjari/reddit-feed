@@ -27,7 +27,8 @@ def main():
         subreddit = reddit.subreddit(subreddit)
         top_posts = subreddit.top('day')
         for post in top_posts:
-            print(f"  {post.score} -- {post.title}, {post.url}")
+            full_url = f"https://www.reddit.com{post.permalink}"
+            print(f"  {post.score} -- {post.title}, {post.url}, {full_url}")
 
 
 if __name__ == '__main__':
