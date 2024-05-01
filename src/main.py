@@ -22,13 +22,12 @@ def main():
     )
 
     for subreddit in subreddits.split(','):
-        print("")
-        print(f"r/{subreddit}")
         subreddit = reddit.subreddit(subreddit)
         top_posts = subreddit.top('day')
         for post in top_posts:
-            full_url = f"https://www.reddit.com{post.permalink}"
-            print(f"  {post.score} -- {post.title}, {post.url}, {full_url}")
+            if post.score > 5:
+                full_url = f"https://www.reddit.com{post.permalink}"
+                print(f"r/{subreddit} -- [{post.score}] {post.title} ({full_url})")
 
 
 if __name__ == '__main__':
