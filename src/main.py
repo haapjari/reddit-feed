@@ -5,13 +5,13 @@ from src.config.config import *
 def main():
     c = Config()
 
-    client_id = c.get("REDDIT_CLIENT_ID")
-    client_secret = c.get("REDDIT_CLIENT_SECRET")
-    password = c.get("REDDIT_PASSWORD")
-    user_agent = c.get("REDDIT_USERAGENT")
-    username = c.get("REDDIT_USERNAME")
+    client_id: str = c.get("REDDIT_CLIENT_ID")
+    client_secret: str = c.get("REDDIT_CLIENT_SECRET")
+    password: str = c.get("REDDIT_PASSWORD")
+    user_agent: str = c.get("REDDIT_USERAGENT")
+    username: str = c.get("REDDIT_USERNAME")
 
-    subreddits = c.get("SUBREDDITS")
+    subreddits: str = c.get("SUBREDDITS")
 
     reddit = praw.Reddit(
         client_id=client_id,

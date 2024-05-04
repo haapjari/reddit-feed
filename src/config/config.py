@@ -7,10 +7,14 @@ class Config:
         load_dotenv()
 
     @staticmethod
-    def get(key):
+    def get(val: str) -> str:
         """
         Get the value of the environment variable with the given key.
         """
-        env_key = key.upper()
+        env_key = val.upper()
 
-        return os.getenv(env_key)
+        key: str | None = os.getenv(env_key)
+        if key == None:
+            return ""
+        else:
+            return key
